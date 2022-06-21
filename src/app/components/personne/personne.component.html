@@ -1,11 +1,35 @@
-<h2>Ajouter une nouvelle personne</h2>
-<form>
-    
-</form>
-<h2>Liste de personnes</h2>
+<h2 class="container text-primary text-center">Ajouter une nouvelle personne</h2>
+<form #monForm="ngForm" class="container" (ngSubmit)="ajouterPersonne()">
+    <div class="mb-3 mt-3">
+        <label for="nom" class="form-label">Nom :</label>
+        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="personne.nom" required>
+    </div>
+    <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom :</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="personne.prenom" required>
+    </div>
 
-<ul>
-    <li *ngFor="let elt of personnes">
-        {{ elt.prenom }} {{ elt.nom }}
-    </li>
-</ul>
+    <button type="submit" class="btn btn-primary" [disabled]="!monForm.valid">Ajouter</button>
+</form>
+<h2 class="container text-center text-primary">Liste de personnes</h2>
+<div class="container mt-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date d'enregistrement</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let elt of personnes">
+                <td> {{ elt.nom }}</td>
+                <td> {{ elt.prenom }}</td>
+                <td> {{ elt.dateEnregistrement }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
