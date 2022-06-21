@@ -21,6 +21,11 @@ export class PersonneComponent implements OnInit {
       this.personne = {};
     })
   }
+  supprimerPersonne(id: any) {
+    this.ps.removePersonne(id).subscribe(res => {
+      this.initPersonne();
+    })
+  }
   initPersonne() {
     this.ps.getAllPersonnes().subscribe(res => {
       this.personnes = res;

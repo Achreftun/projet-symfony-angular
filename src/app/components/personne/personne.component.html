@@ -28,7 +28,11 @@
                 <td> {{ elt.nom }}</td>
                 <td> {{ elt.prenom }}</td>
                 <td> {{ elt.dateEnregistrement }}</td>
-                <td></td>
+                <td>
+                    <button class="text-danger m-2 btn" (click)="supprimerPersonne(elt.id)"><i class="fa-solid fa-trash-can"></i></button>
+
+                    <button class="text-warning btn"><i class="fa-solid fa-file-pen"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>
