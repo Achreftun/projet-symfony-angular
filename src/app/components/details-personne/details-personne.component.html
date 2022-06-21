@@ -1,0 +1,13 @@
+<h2 class="container text-primary text-center">Modifier une  personne</h2>
+<form #monForm="ngForm" class="container" (ngSubmit)="modifierPersonne()">
+    <div class="mb-3 mt-3">
+        <label for="nom" class="form-label">Nom :</label>
+        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="personne.nom" required>
+    </div>
+    <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom :</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="personne.prenom" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!monForm.valid"><i class="fas fa-save"></i></button>
+</form>
