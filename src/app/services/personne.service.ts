@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
 import { Personne } from '../interfaces/personne';
 
 @Injectable({
@@ -8,7 +7,8 @@ import { Personne } from '../interfaces/personne';
 })
 export class PersonneService {
 
-  private url: string = "http://127.0.0.1:8000/ws/personnes";
+  private url: string = "http://localhost:8000/ws/personnes";
+
   constructor(private http: HttpClient) {
   }
 
