@@ -1,4 +1,4 @@
-<h2 class="container text-primary text-center">Ajouter une nouvelle personne</h2>
+<h2 class="container text-primary text-center">Connexion</h2>
 <form #monForm="ngForm" class="container" (ngSubmit)="connexion()">
     <div class="mb-3 mt-3">
         <label for="email" class="form-label">Email :</label>
@@ -10,5 +10,5 @@
         <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="!monForm.valid">Ajouter</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!monForm.valid">Se connecter</button>
 </form>
